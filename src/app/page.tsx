@@ -61,6 +61,7 @@ export default function Home() {
           console.log("section----", section);
           return (
             <Section
+              key={section.sys.id}
               sectionHeader={section.fields.sectionHeader}
               hashId={section.fields.hashId}
             >

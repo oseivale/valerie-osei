@@ -9,15 +9,16 @@ interface CTextWithCTAProps {
 }
 
 const TextWithCTA: React.FC<CTextWithCTAProps> = ({ description, ctas }) => {
-    console.log('ctas', ctas)
+  console.log("ctas", ctas);
   return (
     <div className={quicksand.className} style={{ paddingRight: "4rem" }}>
       <p>{description}</p>
-      {ctas?.map((cta:any) => {
+      {ctas?.map((cta: any) => {
         return (
           <Link
+            key={cta.sys.id}
             href={cta.fields.pdfFile.fields.file.url}
-            target={'_blank'}
+            target={"_blank"}
             type="button"
             className={`btn text-white ${alatsi.className}`}
             style={{ backgroundColor: "#BAA6D4" }}

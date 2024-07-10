@@ -18,6 +18,7 @@ export function resolveComponents(contentType: string, content: any) {
           {content.fields.progressBars.map((bar: any) => {
             return (
               <ProgressBar
+                key={bar.sys.id}
                 color={bar.fields.color}
                 value={bar.fields.percentageValue * 100}
                 max={bar.fields.maxValue}

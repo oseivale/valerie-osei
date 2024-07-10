@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ footerData }) => {
             {/* <h5 className="text-uppercase">Links</h5> */}
             <ul className="list-unstyled mb-0 text-center">
               {footerData.fields.footerLinks.map((link: any, index: any) => (
-                <li key={index} className={styles.footerLink}>
+                <li key={link.sys.id} className={styles.footerLink}>
                   <a
                     href={link.fields.hashId}
                     className={`text-dark ${quicksand.className}`}
