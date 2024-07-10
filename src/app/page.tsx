@@ -1,16 +1,7 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+
 import PageWrapper from "@/components/PageWrapper";
-import { alatsi, quicksand, sacramento } from "@/fonts";
 import { Section } from "@/components/Section";
-import { SingleColumn } from "@/components/SingleColumn";
-import ProgressBar from "@/components/ProgressBar";
-import { Download, Email } from "@/icons";
 import { loader } from "@/contentful/client";
 import { useEffect, useState } from "react";
 import { resolveComponents } from "@/components/resolveComponents";

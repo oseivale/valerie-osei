@@ -1,3 +1,8 @@
+'use client'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import { alatsi, quicksand } from "@/fonts";
 import React from "react";
 import { Download } from "@/icons";

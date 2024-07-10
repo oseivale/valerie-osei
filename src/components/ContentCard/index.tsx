@@ -1,3 +1,8 @@
+'use client'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { Card } from "../Card";

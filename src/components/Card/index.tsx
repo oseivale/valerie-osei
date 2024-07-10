@@ -1,6 +1,12 @@
+'use client'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import React from "react";
 import styles from "./styles.module.css"
 import { quicksand } from "@/fonts";
+
 
 interface CardComponentProps {
   imgSrc?: string; // Source URL for the image

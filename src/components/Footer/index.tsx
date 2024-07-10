@@ -1,8 +1,14 @@
+'use client'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import { quicksand } from "@/fonts";
 import { Email, Instagram, LinkedIn } from "@/icons";
 import React from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
+
 
 interface FooterProps {
   footerData: any;
