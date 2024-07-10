@@ -43,16 +43,11 @@ placeholder: imgSrc={"https://ralfvanveen.com/wp-content/uploads/2021/06/Placeho
 */
 
 export default function Home() {
-  const [pageData, setPageData] = useState();
+  const [pageData, setPageData] = useState<any>();
 
   useEffect(() => {
     loader().then((res: any) => setPageData(res));
   }, []);
-
-  console.log(
-    "home page data---",
-    pageData?.props?.entries.items[0].fields.pages[0].fields.pageSections
-  );
 
   return (
     <PageWrapper>
