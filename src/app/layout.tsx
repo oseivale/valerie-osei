@@ -40,12 +40,6 @@ export default async function RootLayout({
         <Navbar mainNavigationLinks={mainNavigationLinks} siteName={siteName} />
         <main>{children}</main>
         <Footer
-          logoSrc={""}
-          // links={[
-          //   { label: "Skills", href: "#" },
-          //   { label: "Projects", href: "#" },
-          //   { label: "About Me", href: "#" },
-          // ]}
           footerData={pageData.props.entries.items[0].fields.footer}
         />
       </body>

@@ -2,7 +2,11 @@ import React from "react";
 import { dm_sans, alatsi, quicksand, sacramento } from "@/fonts";
 import styles from "./styles.module.css";
 
-const Navbar: React.FC = ({ mainNavigationLinks, siteName }: any) => {
+interface MainNavigationProps {
+    mainNavigationLinks: []; 
+    siteName: string;
+}
+const Navbar: React.FC<MainNavigationProps> = ({ mainNavigationLinks, siteName }) => {
   console.log("mainNavigationLinks", mainNavigationLinks);
   return (
     <div className={`${quicksand.className} ${styles.nav}`}>
