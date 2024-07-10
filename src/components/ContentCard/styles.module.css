@@ -13,6 +13,11 @@
   padding: 0;
 }
 
+#projects .cardGrid .card__1 {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+
 .card__0 {
   grid-column: 1 / 3;
   grid-row: 1 / 2;

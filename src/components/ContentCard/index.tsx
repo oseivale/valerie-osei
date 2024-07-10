@@ -1,14 +1,17 @@
 'use client'
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { Card } from "../Card";
+import { TESTCard } from "../Card";
 import { quicksand } from "@/fonts";
 import Link from "next/link";
 import { Email } from "@/icons";
+
+// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
 
 const ContentCard = ({
   header,
@@ -53,7 +56,7 @@ const ContentCard = ({
     );
   }
   return (
-    <Card
+    <TESTCard
       imgSrc={`https:${image?.fields?.file?.url}`}
       title={header}
       text={description}

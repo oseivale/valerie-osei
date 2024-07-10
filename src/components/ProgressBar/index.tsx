@@ -1,7 +1,9 @@
 'use client'
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 import React from 'react';
 import styles from './styles.module.css'
@@ -15,18 +17,20 @@ interface ProgressBarProps {
   skillName: string;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ color, value, max, label, textClass = '', skillName }) => {
+const TESTProgressBar: React.FC<ProgressBarProps> = ({ color, value, max, label, textClass = '', skillName }) => {
   return (
     <div className='my-3'>
     <p className={styles.skillHeader}>{skillName}</p>
-    <div className={`progress ${styles.progressBar}`} role="progressbar" aria-label={label} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
+    {/* <div className={`progress ${styles.progressBar}`} role="progressbar" aria-label={label} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
       <div className={`progress-bar ${textClass}`} style={{ width: `${value}%` , backgroundColor: color}}>
         {value}%
       </div>
-    </div>
+    </div> */}
+    <ProgressBar className={styles.progressBar} now={value} min={0} max={max}	
+label={`${value}% `}/>
     </div>
     
   );
 };
 
-export default ProgressBar;
+export default TESTProgressBar;

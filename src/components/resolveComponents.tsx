@@ -1,5 +1,5 @@
 import ContentCard from "./ContentCard";
-import ProgressBar from "./ProgressBar";
+import TESTProgressBar from "./ProgressBar";
 import TextWithCTA from "./TextWithCTA";
 
 export function resolveComponents(contentType: string, content: any) {
@@ -17,7 +17,7 @@ export function resolveComponents(contentType: string, content: any) {
         <div>
           {content.fields.progressBars.map((bar: any) => {
             return (
-              <ProgressBar
+              <TESTProgressBar
                 key={bar.sys.id}
                 color={bar.fields.color}
                 value={bar.fields.percentageValue * 100}

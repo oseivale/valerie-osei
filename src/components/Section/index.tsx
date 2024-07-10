@@ -1,7 +1,7 @@
 'use client'
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { alatsi, quicksand, sacramento } from "@/fonts";
 import styles from "./styles.module.css";

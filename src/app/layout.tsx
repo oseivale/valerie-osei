@@ -3,9 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import { alatsi } from "@/fonts";
-import Navbar from "@/components/NavBar";
+import TESTNavbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { loader } from "@/contentful/client";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,18 +39,12 @@ export default async function RootLayout({
       </Head>
 
       <body className={alatsi.className}>
-        <Navbar mainNavigationLinks={mainNavigationLinks} siteName={siteName} />
+        <TESTNavbar mainNavigationLinks={mainNavigationLinks} siteName={siteName} />
         <main>{children}</main>
         <Footer
           footerData={pageData.props.entries.items[0].fields.footer}
         />
       </body>
-      <script
-        src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-        crossOrigin="anonymous"
-        async
-      ></script>
     </html>
   );
 }
