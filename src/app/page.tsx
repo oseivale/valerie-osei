@@ -1,95 +1,76 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Navbar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import PageWrapper from "@/components/PageWrapper";
+import { alatsi, quicksand, sacramento } from "@/fonts";
+import { Section } from "@/components/Section";
+import { SingleColumn } from "@/components/SingleColumn";
+import ProgressBar from "@/components/ProgressBar";
+import { Download, Email } from "@/icons";
+import { loader } from "@/contentful/client";
+import { useEffect, useState } from "react";
+import { resolveComponents } from "@/components/resolveComponents";
+
+/*
+Skills
+
+HTML, 
+CSS, 
+JavaScript
+Next.js
+Typescript
+GraphQL
+REST APIs
+Node.js
+
+Certifications
+Bitmaker General Assembly
+Klaviyo Developer Certficate
+
+Projects
+MiDriver
+Kinetic Sand International
+Smaller Netlify Projects
+Vaughan Centre for Autism
+Afya Collective: https://afyacollective.ca/
+
+placeholder: imgSrc={"https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg"}
+
+*/
 
 export default function Home() {
+  const [pageData, setPageData] = useState();
+
+  useEffect(() => {
+    loader().then((res: any) => setPageData(res));
+  }, []);
+
+  console.log(
+    "home page data---",
+    pageData?.props?.entries.items[0].fields.pages[0].fields.pageSections
+  );
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <PageWrapper>
+      {pageData?.props?.entries.items[0].fields.pages[0].fields.pageSections.map(
+        (section: any) => {
+          console.log("section----", section);
+          return (
+            <Section
+              sectionHeader={section.fields.sectionHeader}
+              hashId={section.fields.hashId}
+            >
+              {section.fields.content.map((entry: any) => {
+                return resolveComponents(entry.sys.contentType.sys.id, entry);
+              })}
+            </Section>
+          );
+        }
+      )}
+    </PageWrapper>
   );
 }

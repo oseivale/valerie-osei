@@ -1,0 +1,39 @@
+.contentWrapper {
+    display: flex;
+}
+
+.contentWrapper .sectionText {
+    max-width: 50%;
+    padding: 1rem;
+}
+
+.section {
+    padding: .5rem;
+}
+
+.graphic {
+    padding: 1rem 3rem;
+}
+
+.rowReverse {
+    flex-direction: row-reverse;
+}
+
+/* .textReverse {
+    text-align: right;
+} */
+
+#projects .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#projects {
+    background-color: #F8F9FA;;
+}
+
+#about_me, #skills {
+    background-color: #fff;
+}
+

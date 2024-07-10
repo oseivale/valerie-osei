@@ -1,0 +1,21 @@
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20%;
+    margin: 1rem auto;
+}
+
+.socialIcons a {
+    margin: .25rem;
+}
+
+.footerLink a::after {
+    content: " ";
+    width: 20px;
+    display: block;
+    position: relative;
+    height: 1px;
+    background-color:grey;
+    margin: .5rem auto;
+}
