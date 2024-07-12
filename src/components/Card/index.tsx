@@ -16,10 +16,10 @@ interface CardComponentProps {
   imgSrc?: string; // Source URL for the image
   title: string; // Title of the card
   text: string; // Text content of the card
-  subheader: string; // URL for the button
+  subheader?: string; // URL for the button
   altText?: string; // Optional alt text for the image
   cardClass?: string;
-  ctas: [];
+  ctas?: [];
 }
 
 export const TESTCard: React.FC<CardComponentProps> = ({
@@ -54,7 +54,7 @@ export const TESTCard: React.FC<CardComponentProps> = ({
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className={`text-muted text-uppercase ${styles.subtitle} ${quicksand.className}`}>{subheader}</Card.Subtitle>
         <Card.Text className={`flex-grow-1 ${quicksand.className}`}>{text}</Card.Text>
-        {ctas.map((cta: any) => {
+        {ctas?.map((cta: any) => {
           return (
             <Button
             key={cta.sys.id}

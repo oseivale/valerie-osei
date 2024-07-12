@@ -18,7 +18,6 @@ export function SingleColumn() {
             text={
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
             }
-            linkUrl={"#"}
             altText="..."
           />
      
