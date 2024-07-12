@@ -1,33 +1,35 @@
-'use client'
+"use client";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 import React from "react";
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 import { quicksand } from "@/fonts";
-import Link from 'next/link';
-
+import Link from "next/link";
+import Image from "next/image";
 
 interface CardComponentProps {
   imgSrc?: string; // Source URL for the image
   title: string; // Title of the card
   text: string; // Text content of the card
-  linkUrl: string; // URL for the button
+  subheader: string; // URL for the button
   altText?: string; // Optional alt text for the image
   cardClass?: string;
+  ctas: [];
 }
 
 export const TESTCard: React.FC<CardComponentProps> = ({
   imgSrc,
   title,
   text,
-  linkUrl,
+  subheader,
+  ctas,
   altText = "...",
-  cardClass = ''
+  cardClass = "",
 }) => {
   return (
     // <div className={`card m-2 border d-flex justify-content-center ${styles[cardClass]}`}>
@@ -46,15 +48,25 @@ export const TESTCard: React.FC<CardComponentProps> = ({
     //     </a>
     //   </div>
     // </div>
-    <Card style={{ width: '' }} className={styles[cardClass]}>
-    <Card.Img variant="top" src="holder.js/100px180" />
-    <Card.Body>
-      <Card.Title>{title}</Card.Title>
-      <Card.Text className={quicksand.className}>
-      {text}
-      </Card.Text>
-      <Button variant="primary" className={styles.cardBtn}>View Project</Button>
-    </Card.Body>
-  </Card>
+    <Card style={{ width: "" }} className={styles[cardClass]}>
+      {/* <Image  src={imgSrc} height={100} width={100} alt='' style={{width: '75px', height: 'auto', margin: '.5rem' }} /> */}
+      <Card.Body className={`d-flex flex-column`}>
+        <Card.Title>{title}</Card.Title>
+        <Card.Subtitle className={`text-muted text-uppercase ${styles.subtitle} ${quicksand.className}`}>{subheader}</Card.Subtitle>
+        <Card.Text className={`flex-grow-1 ${quicksand.className}`}>{text}</Card.Text>
+        {ctas.map((cta: any) => {
+          return (
+            <Button
+              variant="primary"
+              href={cta.fields.externalUrl}
+              className={styles.cardBtn}
+              target="_blank"
+            >
+              {cta.fields.label}
+            </Button>
+          );
+        })}
+      </Card.Body>
+    </Card>
   );
 };

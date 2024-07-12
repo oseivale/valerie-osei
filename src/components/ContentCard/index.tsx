@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -49,18 +49,24 @@ const ContentCard = ({
         <p className={`card-text flex-grow-1 ${quicksand.className}`}>
           {subheader}
         </p>
-        <Link href={"mailto:valerie.osei@gmail.com"} className={`btn mt-auto text-white ${styles.cardBtn}`}>
-          {description} <Email color={'white'} size={'1.5rem'} />
+        <Link
+          href={"mailto:valerie.osei@gmail.com"}
+          className={`btn mt-auto text-white ${styles.cardBtn}`}
+        >
+          {description} <Email color={"white"} size={"1.5rem"} />
         </Link>
       </div>
     );
   }
+  //   return (
+
   return (
     <TESTCard
       imgSrc={`https:${image?.fields?.file?.url}`}
       title={header}
       text={description}
-      linkUrl={"#"}
+      ctas={ctas}
+      subheader={subheader}
       altText="..."
       cardClass={cardClass}
     />

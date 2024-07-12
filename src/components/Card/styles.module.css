@@ -1,5 +1,6 @@
 .cardBtn {
     background-color: #BAA6D4;
+    border: none;
   
 }
 
@@ -11,6 +12,12 @@
     grid-column: 2 / 4;
     grid-row: 2 / 3;
 } */
+
+
+.subtitle{
+    font-size: .8rem;
+    margin: .5rem 0;
+}
 
 .card__1 {
     grid-column: 1 / 3;

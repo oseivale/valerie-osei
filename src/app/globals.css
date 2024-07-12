@@ -33,7 +33,8 @@ h1.textReverse::after {
 }
 
 .progress-bar {
-  animation: progress 5s ease
+  animation: progress 5s ease;
+  background-color: #7222E0 !important;
 }
 
 @keyframes progress {

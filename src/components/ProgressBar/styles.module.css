@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.progress-bar {
+    background-color: red;
+}
+
 .skillHeader{
     margin-bottom: 0;
 }
