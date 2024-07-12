@@ -57,6 +57,7 @@ export const TESTCard: React.FC<CardComponentProps> = ({
         {ctas.map((cta: any) => {
           return (
             <Button
+            key={cta.sys.id}
               variant="primary"
               href={cta.fields.externalUrl}
               className={styles.cardBtn}

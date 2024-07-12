@@ -78,7 +78,7 @@ const TESTNavbar: React.FC<MainNavigationProps> = ({
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {mainNavigationLinks.map((link: any) => {
-              return <Nav.Link href={link.fields.hashId}>{link.fields.label}</Nav.Link>;
+              return <Nav.Link key={link.sys.id} href={link.fields.hashId}>{link.fields.label}</Nav.Link>;
             })}
           </Nav>
         </Navbar.Collapse>
