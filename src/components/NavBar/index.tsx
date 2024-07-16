@@ -11,6 +11,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Link from "next/link";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Collapse from "react-bootstrap/Collapse";
+import { Hamburger } from "@/icons";
 
 interface MainNavigationProps {
   mainNavigationLinks: [];
@@ -21,69 +26,73 @@ const TESTNavbar: React.FC<MainNavigationProps> = ({
   siteName,
 }: any) => {
   console.log("mainNavigationLinks", mainNavigationLinks);
+  const [open, setOpen] = useState(false);
   return (
-    // <div className={`${quicksand.className} ${styles.nav}`}>
-    //   {" "}
-    //   {/* Container with max-width for desktop */}
-    //   <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-    //     <div
-    //       className="container-fluid"
-    //       style={{ maxWidth: "960px", margin: "0 auto" }}
-    //     >
-    //       <a className={`navbar-brand`} href="#">
-    //         {siteName}
-    //       </a>
-    //       <button
-    //         className="navbar-toggler"
-    //         type="button"
-    //         data-bs-toggle="collapse"
-    //         data-bs-target="#navbarSupportedContent"
-    //         aria-controls="navbarSupportedContent"
-    //         aria-expanded="false"
-    //         aria-label="Toggle navigation"
-    //       >
-    //         <span className="navbar-toggler-icon"></span>
-    //       </button>
-    //       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    //         <ul
-    //           className={`navbar-nav ms-auto mb-2 mb-lg-0 ${styles.linkWrapper}`}
-    //         >
-    //           {" "}
-    //           {/* Changed from me-auto to ms-auto */}
-    //           {mainNavigationLinks.map((link: any) => {
-    //             return (
-    //               <li key={link.sys.id}>
-    //                 <a
-    //                   className={`nav-link active`}
-    //                   aria-current="page"
-    //                   href={link.fields.hashId}
-    //                 >
-    //                   {link.fields.label}
-    //                 </a>
-    //               </li>
-    //             );
-    //           })}
-    //         </ul>
-    //       </div>
-    //     </div>
-    //   </nav>
-    // </div>
-    <Navbar
-      expand="lg"
-      className={`bg-body-tertiary ${quicksand.className} ${styles.nav}`}
-    >
-      <Container style={{ maxWidth: "960px", margin: "0 auto" }}>
-        <Navbar.Brand href="/">{siteName}</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+    // <Navbar
+    //   expand="lg"
+    //   className={`${quicksand.className} ${styles.nav}`}
+    // >
+    //   <Container style={{ maxWidth: "960px", margin: "0 auto" }}>
+    //     <Navbar.Brand href="/">{siteName}</Navbar.Brand>
+    //     {/* <Link href={'/'}>Test</Link> */}
+    //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    //     <Navbar.Collapse id="basic-navbar-nav">
+    //       <Nav className="ms-auto">
+    //         {mainNavigationLinks.map((link: any) => {
+    //           return <Nav.Link key={link.sys.id} href={link.fields.hashId}>{link.fields.label}</Nav.Link>;
+    //         })}
+    //       </Nav>
+    //     </Navbar.Collapse>
+    //   </Container>
+    // </Navbar>
+    <nav className={styles.nav}>
+      <div className={styles.navContainer}>
+        <div className={`${styles.brand} ${sacramento.className}`}>
+          <Link className={styles.brandLink} href={"/"}>
+            {siteName}
+          </Link>
+
+          <Button
+            className={styles.button}
+            onClick={() => setOpen(!open)}
+            aria-controls="example-collapse-text"
+            aria-expanded={open}
+          >
+            <Hamburger color={'black'} size={'2.75rem'} />
+          </Button>
+        </div>
+        <ul>
+          {mainNavigationLinks.map((link: any) => {
+            return (
+              <Nav.Link
+                className={`mx-3 ${quicksand.className}`}
+                key={link.sys.id}
+                href={link.fields.hashId}
+              >
+                {link.fields.label}
+              </Nav.Link>
+            );
+          })}
+        </ul>
+        {/* <div className={styles.mobileToggle}></div> */}
+        <Collapse in={open} className={styles.collapseWrapper}>
+          <div id="collapse">
             {mainNavigationLinks.map((link: any) => {
-              return <Nav.Link key={link.sys.id} href={link.fields.hashId}>{link.fields.label}</Nav.Link>;
+              return (
+                <div key={link.sys.id} className={styles.linkWrapper}>
+                  <Link
+                    className={`mx-3 ${quicksand.className}`}
+                    href={link.fields.hashId}
+                  >
+                    {link.fields.label}
+                  </Link>
+                </div>
+              );
             })}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </div>
+        </Collapse>
+      </div>
+    </nav>
   );
 };
 

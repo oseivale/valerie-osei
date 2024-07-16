@@ -5,6 +5,7 @@ import { Section } from "@/components/Section";
 import { loader } from "@/contentful/client";
 import { useEffect, useState } from "react";
 import { resolveComponents } from "@/components/resolveComponents";
+import { HeroBanner } from "@/components/HeroBanner";
 
 /*
 Skills
@@ -42,9 +43,10 @@ export default function Home() {
 
   return (
     <PageWrapper>
+      <HeroBanner heroData={pageData} />
       {pageData?.props?.entries.items[0].fields.pages[0].fields.pageSections.map(
         (section: any) => {
-          console.log("section----", section);
+          console.log("section----", pageData?.props?.entries.items[0].fields.pages[0].fields);
           return (
             <Section
               key={section.sys.id}
