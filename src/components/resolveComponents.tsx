@@ -14,7 +14,7 @@ export function resolveComponents(contentType: string, content: any) {
       );
     case "progressBarWrapper":
       return (
-        <div>
+        <div style={{paddingTop: '2rem'}}>
           {content.fields.progressBars.map((bar: any) => {
             return (
               <TESTProgressBar

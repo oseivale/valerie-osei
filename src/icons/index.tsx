@@ -117,3 +117,26 @@ export const Hamburger: React.FC<IconProps> = ({
     </svg>
   );
 };
+
+export const Close: React.FC<IconProps> = ({
+  size = "1em",
+  color = "currentColor",
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+    >
+      <path
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={4}
+        d="m8 8l32 32M8 40L40 8"
+      ></path>
+    </svg>
+  );
+};

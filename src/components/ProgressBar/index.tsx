@@ -28,13 +28,7 @@ const TESTProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <div className="my-3">
       <p className={styles.skillHeader}>{skillName}</p>
-      {/* <div className={`progress ${styles.progressBar}`} role="progressbar" aria-label={label} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
-      <div className={`progress-bar ${textClass}`} style={{ width: `${value}%` , backgroundColor: color}}>
-        {value}%
-      </div>
-    </div> */}
       <ProgressBar
-    //   animated
         className={styles.progressBar}
         now={value}
         min={0}

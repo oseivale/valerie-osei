@@ -1,45 +1,91 @@
 .contentWrapper {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.section h1 {
+  max-width: 960px;
+  margin: 1rem;
+  font-size: 2.25rem;
 }
 
 .contentWrapper .sectionText {
-    max-width: 50%;
-    padding: 1rem;
+  max-width: 100%;
+  padding: 1rem;
 }
 
 .section {
-    padding: .5rem;
+  padding: 0.5rem;
 }
 
 .graphic {
-    padding: 1rem 3rem;
+  padding: 1rem 3rem;
 }
 
 .rowReverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
-/* .textReverse {
-    text-align: right;
-} */
-
 #projects .cardGrid {
+  display: block;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  /* grid-gap: 20px; */
+}
+
+#projects {
+  background-color: #f8f9fa;
+}
+
+#about_me,
+#skills {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 740px) {
+  .contentWrapper {
+    display: flex;
+    align-items: unset;
+    flex-direction: row;
+  }
+
+  .section h1 {
+    max-width: 960px;
+    margin: 1rem auto 2rem;
+  }
+
+  .contentWrapper .sectionText {
+    max-width: 50%;
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 0.5rem;
+  }
+
+  .graphic {
+    padding: 1rem 3rem;
+  }
+
+  .rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  #projects .cardGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: 20px;
-}
+    /* grid-gap: 5px; */
+  }
 
-/* #projects .cardGrid .card__1 {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-} */
+  #projects {
+    background-color: #f8f9fa;
+  }
 
-#projects {
-    background-color: #F8F9FA;;
-}
-
-#about_me, #skills {
+  #about_me,
+  #skills {
     background-color: #fff;
+  }
 }
-

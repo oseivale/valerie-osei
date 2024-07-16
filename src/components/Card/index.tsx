@@ -32,7 +32,7 @@ export const TESTCard: React.FC<CardComponentProps> = ({
   cardClass = "",
 }) => {
   return (
-    <Card style={{ width: "" }} className={styles[cardClass]}>
+    <Card className={styles[cardClass]}>
       <Card.Body className={`d-flex flex-column`}>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className={`text-muted text-uppercase ${styles.subtitle} ${quicksand.className}`}>{subheader}</Card.Subtitle>

@@ -15,7 +15,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { Hamburger } from "@/icons";
+import { Close, Hamburger } from "@/icons";
 
 interface MainNavigationProps {
   mainNavigationLinks: [];
@@ -58,7 +58,11 @@ const TESTNavbar: React.FC<MainNavigationProps> = ({
             aria-controls="example-collapse-text"
             aria-expanded={open}
           >
-            <Hamburger color={'black'} size={'2.75rem'} />
+            {open ? (
+              <Close color={"black"} size={"2.75rem"} />
+            ) : (
+              <Hamburger color={"black"} size={"2.75rem"} />
+            )}
           </Button>
         </div>
         <ul>

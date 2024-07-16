@@ -1,12 +1,19 @@
 .progressBar {
-    width: 400px;
+    width: 360px;
     padding: 0;
-}
-
-.progress-bar {
-    background-color: red;
 }
 
 .skillHeader{
     margin-bottom: 0;
+}
+@media screen and (min-width: 740px) {
+
+    .progressBar {
+        width: 400px;
+        padding: 0;
+    }
+    
+    .skillHeader{
+        margin-bottom: 0;
+    }
 }

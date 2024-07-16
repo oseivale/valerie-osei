@@ -7,6 +7,7 @@ import { alatsi, quicksand } from "@/fonts";
 import React from "react";
 import { Download } from "@/icons";
 import Link from "next/link";
+import styles from './styles.module.css'
 
 interface CTextWithCTAProps {
   description: string;
@@ -16,7 +17,7 @@ interface CTextWithCTAProps {
 const TextWithCTA: React.FC<CTextWithCTAProps> = ({ description, ctas }) => {
   console.log("ctas", ctas);
   return (
-    <div className={quicksand.className} style={{ paddingRight: "4rem" }}>
+    <div className={`${styles.textWithCTA} ${quicksand.className}`}>
       <p>{description}</p>
       {ctas?.map((cta: any) => {
         return (
