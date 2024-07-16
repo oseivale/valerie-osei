@@ -3,18 +3,27 @@
 import { quicksand, sacramento } from '@/fonts';
 import styles from './styles.module.css'
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 export const HeroBanner = ({ heroData }: any) => {
-    // script.js
-window.addEventListener('scroll', function() {
-    const scrollIndicator: HTMLElement | null = document.getElementById(styles['scrollIndicator']);
-    if (window.scrollY > 10) {
-        scrollIndicator ? scrollIndicator.style.display = 'none' :  '';
-    } else {
-        scrollIndicator ? scrollIndicator.style.display = 'block' : '';
-    }
-});
 
+
+useEffect(() => {
+    const handleScroll = () => {
+        const scrollIndicator: HTMLElement | null = document.getElementById(styles['scrollIndicator']);
+        if (window.scrollY > 10) {
+            scrollIndicator ? scrollIndicator.style.display = 'none' :  '';
+        } else {
+            scrollIndicator ? scrollIndicator.style.display = 'block' : '';
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+}, []);
 
   return (
     <div
