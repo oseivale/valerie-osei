@@ -51,7 +51,7 @@ const ContentCard = ({
         </p>
         <Link
           href={"mailto:valerie.osei@gmail.com"}
-          className={`btn mt-auto text-white ${styles.cardBtn}`}
+          className={`mt-auto text-white ${styles.cardBtn}`}
         >
           {description} <Email color={"white"} size={"1.5rem"} />
         </Link>

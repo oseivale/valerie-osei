@@ -14,8 +14,8 @@
 }
 
 #projects .cardGrid .card__1 {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
 }
 
 .card__0 {
@@ -44,11 +44,18 @@
 }
 
 .cardBtn {
-  background-color: #baa6d4;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 20%;
+  max-width: 25%;
+  background-color: #baa6d4 !important;
+  border: none;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .cardBtn:hover {

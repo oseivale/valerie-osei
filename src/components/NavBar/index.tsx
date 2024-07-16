@@ -65,7 +65,7 @@ const TESTNavbar: React.FC<MainNavigationProps> = ({
           {mainNavigationLinks.map((link: any) => {
             return (
               <Nav.Link
-                className={`mx-3 ${quicksand.className}`}
+                className={`mx-3 ${quicksand.className} ${styles.navLink}`}
                 key={link.sys.id}
                 href={link.fields.hashId}
               >

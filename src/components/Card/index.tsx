@@ -32,39 +32,21 @@ export const TESTCard: React.FC<CardComponentProps> = ({
   cardClass = "",
 }) => {
   return (
-    // <div className={`card m-2 border d-flex justify-content-center ${styles[cardClass]}`}>
-    //   <img
-    //     src={imgSrc}
-    //     className="img-fluid"
-    //     alt={altText}
-    //     height={100}
-    //     width={100}
-    //   />
-    //   <div className="card-body d-flex flex-column">
-    //     <h5 className="card-title">{title}</h5>
-    //     <p className={`card-text flex-grow-1 ${quicksand.className}`}>{text}</p>
-    //     <a href={linkUrl} className={`btn mt-auto text-white ${styles.cardBtn}`}>
-    //       View Project
-    //     </a>
-    //   </div>
-    // </div>
     <Card style={{ width: "" }} className={styles[cardClass]}>
-      {/* <Image  src={imgSrc} height={100} width={100} alt='' style={{width: '75px', height: 'auto', margin: '.5rem' }} /> */}
       <Card.Body className={`d-flex flex-column`}>
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className={`text-muted text-uppercase ${styles.subtitle} ${quicksand.className}`}>{subheader}</Card.Subtitle>
         <Card.Text className={`flex-grow-1 ${quicksand.className}`}>{text}</Card.Text>
         {ctas?.map((cta: any) => {
           return (
-            <Button
+            <Link
             key={cta.sys.id}
-            //   variant="primary"
               href={cta.fields.externalUrl}
               className={styles.cardBtn}
               target="_blank"
             >
               {cta.fields.label}
-            </Button>
+            </Link>
           );
         })}
       </Card.Body>
