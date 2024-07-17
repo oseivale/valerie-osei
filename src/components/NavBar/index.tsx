@@ -59,9 +59,9 @@ const TESTNavbar: React.FC<MainNavigationProps> = ({
             aria-expanded={open}
           >
             {open ? (
-              <Close color={"black"} size={"2.75rem"} />
+              <Close color={"black"} size={"2.5rem"} />
             ) : (
-              <Hamburger color={"black"} size={"2.75rem"} />
+              <Hamburger color={"black"} size={"2.5rem"} />
             )}
           </Button>
         </div>
