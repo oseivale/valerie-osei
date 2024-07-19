@@ -56,11 +56,14 @@ useEffect(() => {
           }
         </h3>
       </div>
-      <Link href={'#styles_skills__pqLjH'} id={styles.scrollIndicator}>
+      <div className={styles.scrollIndicator}>
+         <Link href={'#styles_skills__pqLjH'} id={styles.scrollIndicator}>
         <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 2048 2048">
             <path fill='white' d="M2048 91L1024 1115L0 91L91 0l933 933L1957 0zM1024 1829l933-933l91 91l-1024 1024L0 987l91-91z"></path>
         </svg>
     </Link>
+      </div>
+     
     </div>
   );
 };
