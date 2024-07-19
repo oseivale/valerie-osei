@@ -2,6 +2,7 @@
   max-height: 350px;
   width: 350px;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 .contentCard {
