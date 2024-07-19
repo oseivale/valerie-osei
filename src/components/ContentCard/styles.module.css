@@ -39,6 +39,7 @@
 }
 
 .contact {
+  padding: 0;
   grid-column: 1 / 4;
   grid-row: 4 / 4;
 }
@@ -107,6 +108,7 @@ width: 100%;
       }
       
       .contact {
+        padding: 0;
         grid-column: 1 / 4;
         grid-row: 4 / 4;
       }
