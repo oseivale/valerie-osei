@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Spinner from "@/components/Spinner";
+import { Spinner } from "react-bootstrap";
 
 export function Loading() {
   return <>Loading...</>;
@@ -18,7 +18,7 @@ function LoadingPage() {
       </div> */}
       <div style={{margin: '0 auto', maxWidth: '500px', position: 'absolute', top: '50%', left: '50%', color: 'purple', textAlign: 'center'}}>
         {/* <Loading /> */}
-        <Spinner />
+        <Spinner animation="border" />
         {/* <h3>Just a sec...</h3> */}
       </div>
     </div>
