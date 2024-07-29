@@ -28,17 +28,17 @@ export default async function RootLayout({
 }>) {
   const pageData = await loader();
 
-  // const TESTNavbar = dynamic(() => import("@/components/NavBar"), { ssr: false, loading: () => <LoadingPage /> })
-  const TESTNavbar: any = dynamic(
-    () => {
-      return new Promise<any>((resolve) => {
-        setTimeout(() => resolve(import("@/components/NavBar")), 2000); // 2 seconds delay
-      });
-    },
-    {
-      loading: () => <LoadingPage />,
-    }
-  );
+  const TESTNavbar = dynamic(() => import("@/components/NavBar"), { ssr: false, loading: () => <LoadingPage /> })
+  // const TESTNavbar: any = dynamic(
+  //   () => {
+  //     return new Promise<any>((resolve) => {
+  //       setTimeout(() => resolve(import("@/components/NavBar")), 2000); // 2 seconds delay
+  //     });
+  //   },
+  //   {
+  //     loading: () => <LoadingPage />,
+  //   }
+  // );
   const Footer = dynamic(() => import("@/components/Footer"), { ssr: false })
  
 
