@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { loader } from "@/contentful/client";
 import dynamic from "next/dynamic";
 import { LoadingProvider } from "../context/LoadingContext";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/ImageLoader";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Suspense } from "react";
@@ -32,7 +32,7 @@ export default async function RootLayout({
   const TESTNavbar: any = dynamic(
     () => {
       return new Promise<any>((resolve) => {
-        setTimeout(() => resolve(import("@/components/NavBar")), 3000); // 2 seconds delay
+        setTimeout(() => resolve(import("@/components/NavBar")), 2000); // 2 seconds delay
       });
     },
     {

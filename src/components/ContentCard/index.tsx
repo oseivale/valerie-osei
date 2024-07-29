@@ -10,7 +10,7 @@ import { quicksand } from "@/fonts";
 import Link from "next/link";
 import { Email } from "@/icons";
 import { useEffect, useState } from "react";
-import Spinner from "../Spinner";
+import Spinner from "../ImageLoader";
 import contentfulLoader from "../../../utils/contentfulLoader";
 
 
