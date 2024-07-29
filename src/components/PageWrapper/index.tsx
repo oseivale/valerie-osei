@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.css';
 
 interface PageWrapperProps {
   children: React.ReactNode;  // Accepts any valid React children
@@ -6,7 +7,7 @@ interface PageWrapperProps {
 
 const PageWrapper: React.FC<PageWrapperProps> = ({ children }) => {
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       {children}
     </div>
   );

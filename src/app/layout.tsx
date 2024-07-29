@@ -6,8 +6,13 @@ import { alatsi } from "@/fonts";
 import TESTNavbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { loader } from "@/contentful/client";
+import dynamic from "next/dynamic";
+import { LoadingProvider } from "../context/LoadingContext";
+import Spinner from "../components/Spinner";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Suspense } from "react";
+import LoadingPage from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,11 +28,27 @@ export default async function RootLayout({
 }>) {
   const pageData = await loader();
 
+  // const TESTNavbar = dynamic(() => import("@/components/NavBar"), { ssr: false, loading: () => <LoadingPage /> })
+  const TESTNavbar: any = dynamic(
+    () => {
+      return new Promise<any>((resolve) => {
+        setTimeout(() => resolve(import("@/components/NavBar")), 3000); // 2 seconds delay
+      });
+    },
+    {
+      loading: () => <LoadingPage />,
+    }
+  );
+  const Footer = dynamic(() => import("@/components/Footer"), { ssr: false })
+ 
+
   console.log("page data---", pageData.props.entries.items[0].fields);
-  // Main Navigation Data: 
+  // Main Navigation Data:
   const mainNavigationLinks =
-    pageData.props.entries.items[0].fields.mainNavigation.fields.navigationLinks;
-  const siteName = pageData.props.entries.items[0].fields.mainNavigation.fields.siteName;
+    pageData.props.entries.items[0].fields.mainNavigation.fields
+      .navigationLinks;
+  const siteName =
+    pageData.props.entries.items[0].fields.mainNavigation.fields.siteName;
 
   return (
     <html lang="en">
@@ -39,11 +60,12 @@ export default async function RootLayout({
       </Head>
 
       <body className={alatsi.className}>
-        <TESTNavbar mainNavigationLinks={mainNavigationLinks} siteName={siteName} />
-        <main>{children}</main>
-        <Footer
-          footerData={pageData.props.entries.items[0].fields.footer}
+        <TESTNavbar
+          mainNavigationLinks={mainNavigationLinks}
+          siteName={siteName}
         />
+        <main>{children}</main>
+        <Footer footerData={pageData.props.entries.items[0].fields.footer} />
       </body>
     </html>
   );

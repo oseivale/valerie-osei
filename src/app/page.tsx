@@ -3,9 +3,10 @@
 import PageWrapper from "@/components/PageWrapper";
 import { Section } from "@/components/Section";
 import { loader } from "@/contentful/client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { resolveComponents } from "@/components/resolveComponents";
 import { HeroBanner } from "@/components/HeroBanner";
+import LoadingPage from "./loading";
 
 /*
 Skills
@@ -42,6 +43,7 @@ export default function Home() {
   }, []);
 
   return (
+    <Suspense fallback={<LoadingPage />}>          
     <PageWrapper>
       <HeroBanner heroData={pageData} />
       {pageData?.props?.entries.items[0].fields.pages[0].fields.pageSections.map(
@@ -61,5 +63,6 @@ export default function Home() {
         }
       )}
     </PageWrapper>
+    </Suspense>
   );
 }

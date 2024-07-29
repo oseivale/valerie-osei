@@ -1,6 +1,7 @@
 import ContentCard from "./ContentCard";
 import TESTProgressBar from "./ProgressBar";
 import TextWithCTA from "./TextWithCTA";
+ 
 
 export function resolveComponents(contentType: string, content: any) {
   console.log("----hi9999----", content.fields.image);

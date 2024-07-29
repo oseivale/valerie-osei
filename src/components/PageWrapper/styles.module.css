@@ -1,0 +1,14 @@
+.pageWrapper {
+    animation: fadeIn 3.25s linear;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}

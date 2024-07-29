@@ -54,7 +54,7 @@ const TESTNavbar: React.FC<MainNavigationProps> = ({
 
           <Button
             className={styles.button}
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen(prevOpen => (!prevOpen))}
             aria-controls="example-collapse-text"
             aria-expanded={open}
           >
