@@ -7,7 +7,7 @@
 
 .section h1 {
   max-width: 960px;
-  margin: 1rem;
+  /* margin: 1rem; */
   font-size: 2.25rem;
 }
 
@@ -42,6 +42,19 @@
 #about_me,
 #skills {
   background-color: #fff;
+}
+
+#about_me h1,
+#skills h1{
+  margin: 0 1rem;
+}
+
+#projects > h1 {
+  margin: 2rem 1rem;
+}
+
+.contact h1 {
+  margin: 0 !important;
 }
 
 @media screen and (min-width: 740px) {
