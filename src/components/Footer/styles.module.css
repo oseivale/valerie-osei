@@ -19,3 +19,13 @@
     background-color:grey;
     margin: .5rem auto;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}

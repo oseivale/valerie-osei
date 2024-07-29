@@ -7,6 +7,8 @@ import { Suspense, useEffect, useState } from "react";
 import { resolveComponents } from "@/components/resolveComponents";
 import { HeroBanner } from "@/components/HeroBanner";
 import LoadingPage from "./loading";
+import dynamic from "next/dynamic";
+import ImageLoader from "@/components/ImageLoader";
 
 /*
 Skills
@@ -43,7 +45,6 @@ export default function Home() {
   }, []);
 
   return (
-    <Suspense fallback={<LoadingPage />}>          
     <PageWrapper>
       <HeroBanner heroData={pageData} />
       {pageData?.props?.entries.items[0].fields.pages[0].fields.pageSections.map(
@@ -63,6 +64,5 @@ export default function Home() {
         }
       )}
     </PageWrapper>
-    </Suspense>
   );
 }

@@ -28,7 +28,7 @@ export default async function RootLayout({
 }>) {
   const pageData = await loader();
 
-  const TESTNavbar = dynamic(() => import("@/components/NavBar"), { ssr: false, loading: () => <LoadingPage /> })
+  // const TESTNavbar = dynamic(() => import("@/components/NavBar"), { ssr: false, loading: () => <LoadingPage /> })
   // const TESTNavbar: any = dynamic(
   //   () => {
   //     return new Promise<any>((resolve) => {
@@ -39,7 +39,7 @@ export default async function RootLayout({
   //     loading: () => <LoadingPage />,
   //   }
   // );
-  const Footer = dynamic(() => import("@/components/Footer"), { ssr: false })
+  const Footer = dynamic(() => import("@/components/Footer"), { ssr: false, loading: () => null })
  
 
   console.log("page data---", pageData.props.entries.items[0].fields);
@@ -65,7 +65,10 @@ export default async function RootLayout({
           siteName={siteName}
         />
         <main>{children}</main>
-        <Footer footerData={pageData.props.entries.items[0].fields.footer} />
+        {pageData && (
+          <Footer footerData={pageData.props.entries.items[0].fields.footer} />
+        )}
+        
       </body>
     </html>
   );
