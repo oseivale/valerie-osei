@@ -45,7 +45,7 @@
 }
 
 #about_me h1,
-#skills h1{
+#skills h1 {
   margin: 0 1rem;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .contact h1 {
-  margin: 0 !important;
+  margin: .5rem !important;
 }
 
 @media screen and (min-width: 740px) {
@@ -68,6 +68,15 @@
   .section h1 {
     max-width: 960px;
     margin: 1rem auto 2rem;
+  }
+
+  #about_me h1,
+  #skills h1 {
+    margin: 2rem auto;
+  }
+
+  #projects > h1 {
+    margin: 2rem auto;
   }
 
   .contentWrapper .sectionText {
@@ -102,4 +111,7 @@
   #skills {
     background-color: #fff;
   }
+
+
+  
 }
